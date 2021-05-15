@@ -21,7 +21,7 @@ def start_game():
                 print("You got it correct")
                 print("You got it in {} tries".format(guesses))
         except ValueError:
-            print("oops please type a number")
+            print("oops...please type a number")
 
     replay = str(input("Do you want to play again y/n: "))
     if replay.casefold() == "y":
@@ -30,7 +30,6 @@ def start_game():
         sys.exit("Goodbye")
 
 
-# Kick off the program by calling the start_game function.
 start_game()
 
 
