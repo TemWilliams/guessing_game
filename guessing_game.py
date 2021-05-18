@@ -11,7 +11,9 @@ def start_game():
     while answer != guess:
         try:
             guess = int(input("Please guess a number between 1-10: "))
-            if answer > guess:
+            if guess > 10 or guess < 1:
+                raise ValueError
+            elif answer > guess:
                 print("Guess higher")
                 guesses += 1
             elif answer < guess:
@@ -21,7 +23,7 @@ def start_game():
                 print("You got it correct")
                 print("You got it in {} tries".format(guesses))
         except ValueError:
-            print("oops...please type a number")
+            print("oops...please type a number 1-10")
 
     replay = str(input("Do you want to play again y/n: "))
     if replay.casefold() == "y":
